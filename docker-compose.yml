@@ -17,6 +17,10 @@ services:
       - ./backend:/app
     environment:
       DATABASE_URL: postgresql://admin:senha_segura@db:5432/safra_db
+    # Chave do Gemini e config do SafraIA (arquivo fora do git)
+    env_file:
+      - path: ./backend/.env
+        required: false
     depends_on:
       - db
     ports:
